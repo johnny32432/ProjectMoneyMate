@@ -33,7 +33,7 @@ fun DashboardScreen(
     onSeeAllClick: () -> Unit,
     viewModel: DashboardViewModel = viewModel()
 ) {
-    // UI подписан на StateFlow и перерисовывается при каждом изменении
+
     val state by viewModel.uiState.collectAsState()
 
     LazyColumn(
