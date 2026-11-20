@@ -4,8 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.projectmoneymate.navigation.AppNavHost
+import com.example.projectmoneymate.navigation.BottomBar
+import com.example.projectmoneymate.navigation.Screen
 import com.example.projectmoneymate.ui.theme.ProjectMoneyMateTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,8 +24,30 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProjectMoneyMateTheme {
-                AppNavHost(navController = rememberNavController())
+                MoneyMateApp()
             }
         }
+    }
+}
+
+@Composable
+fun MoneyMateApp() {
+    val navController = rememberNavController()
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = backStackEntry?.destination?.route
+
+
+    val showBottomBar = currentRoute == Screen.Dashboard.route || currentRoute == Screen.History.route
+
+    Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
+        bottomBar = { if (showBottomBar) BottomBar(navController) }
+    ) { innerPadding ->
+        AppNavHost(
+            navController = navController,
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
+        )
     }
 }
