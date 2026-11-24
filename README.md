@@ -28,7 +28,3 @@ Users can add purchases, choose a category, and see the total amount spent.
  
 - 🚧 Status
   In development (Week 12)
-
-## Dashboard & Details
-- Dashboard shows total expenses, a donut chart by category and the 5 most recent expenses
-- Details screen receives `expenseId` via navigation and allows deleting an expense with confirmation
