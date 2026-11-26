@@ -4,9 +4,9 @@ MoneyMate is an Android app for tracking personal expenses.
 Users can add purchases, choose a category, and see the total amount spent.
 
 👥 Team
-- Zhanibek Zholdaspek— project setup, data layer, navigation
+- Kursakpaev Arkhat — project setup, data layer, navigation | Room database (Entity, DAO, Database, Repository)
 - Marat Nuray — Dashboard and Details screens
-- Kursakpaev Arkhat — Add Expense and History screens
+- Zhanibek Zholdaspek — Add Expense and History screens
  
 - ✨ Main features
 - Dashboard with total expenses and spending by category
@@ -27,4 +27,4 @@ Users can add purchases, choose a category, and see the total amount spent.
 - Navigation Compose
  
 - 🚧 Status
-  In development (Week 12)
+  In development (Week 14)
