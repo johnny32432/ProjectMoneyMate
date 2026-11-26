@@ -37,7 +37,12 @@ fun MoneyMateApp() {
     val currentRoute = backStackEntry?.destination?.route
 
 
-    val showBottomBar = currentRoute == Screen.Dashboard.route || currentRoute == Screen.History.route
+    val showBottomBar = currentRoute in listOf(
+        Screen.Dashboard.route,
+        Screen.History.route,
+        Screen.Rates.route,
+        Screen.Settings.route
+    )
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
