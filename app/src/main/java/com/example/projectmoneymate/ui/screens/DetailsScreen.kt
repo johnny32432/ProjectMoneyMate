@@ -42,6 +42,7 @@ import com.example.projectmoneymate.viewmodel.DetailsViewModel
 @Composable
 fun DetailsScreen(
     onBack: () -> Unit,
+    onEdit: (Int) -> Unit = {},
     viewModel: DetailsViewModel = viewModel()
 ) {
     val expense by viewModel.expense.collectAsState()

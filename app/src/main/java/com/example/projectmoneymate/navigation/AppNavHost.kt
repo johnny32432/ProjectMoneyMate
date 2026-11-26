@@ -11,7 +11,10 @@ import androidx.navigation.navArgument
 import com.example.projectmoneymate.ui.screens.AddExpenseScreen
 import com.example.projectmoneymate.ui.screens.DashboardScreen
 import com.example.projectmoneymate.ui.screens.DetailsScreen
+import com.example.projectmoneymate.ui.screens.EditExpenseScreen
 import com.example.projectmoneymate.ui.screens.HistoryScreen
+import com.example.projectmoneymate.ui.screens.RatesScreen
+import com.example.projectmoneymate.ui.screens.SettingsScreen
 
 @Composable
 fun AppNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
@@ -40,11 +43,34 @@ fun AppNavHost(navController: NavHostController, modifier: Modifier = Modifier) 
             )
         }
 
+        composable(Screen.Rates.route) {
+            RatesScreen()
+        }
+
+        composable(Screen.Settings.route) {
+            SettingsScreen()
+        }
+
+
         composable(
             route = Screen.Details.route,
             arguments = listOf(navArgument(Screen.Details.ARG_ID) { type = NavType.IntType })
         ) {
-            DetailsScreen(onBack = { navController.popBackStack() })
+            DetailsScreen(
+                onBack = { navController.popBackStack() },
+                onEdit = { id -> navController.navigate(Screen.EditExpense.createRoute(id)) }
+            )
+        }
+
+
+        composable(
+            route = Screen.EditExpense.route,
+            arguments = listOf(navArgument(Screen.EditExpense.ARG_ID) { type = NavType.IntType })
+        ) {
+            EditExpenseScreen(
+                onBack = { navController.popBackStack() },
+                onSaved = { navController.popBackStack() }
+            )
         }
     }
 }
