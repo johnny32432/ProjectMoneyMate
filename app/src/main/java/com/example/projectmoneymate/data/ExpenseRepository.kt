@@ -48,4 +48,7 @@ object ExpenseRepository {
     fun delete(id: Int) {
         _expenses.update { list -> list.filterNot { it.id == id } }
     }
+    fun update(expense: Expense) {
+        _expenses.update { list -> list.map { if (it.id == expense.id) expense else it } }
+    }
 }
