@@ -28,3 +28,6 @@ Users can add purchases, choose a category, and see the total amount spent.
  
 - 🚧 Status
   In development (Week 12)
+- ## Settings & editing
+- Dark/light theme preference is saved with DataStore and restored after restart
+- Expenses can be edited (Update in Room) from the Details screen; the Add Expense form is reused for editing
