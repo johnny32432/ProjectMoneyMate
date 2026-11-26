@@ -8,5 +8,6 @@ data class AddExpenseUiState(
     val note: String = "",
     val category: Category = Category.FOOD,
     val titleError: String? = null,
-    val amountError: String? = null
+    val amountError: String? = null,
+    val isEditMode: Boolean = false
 )
