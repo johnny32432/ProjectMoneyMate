@@ -40,7 +40,10 @@ fun AddExpenseScreen(
             .fillMaxSize()
             .imePadding()
     ) {
-        AppTopBar(title = "Add Expense", onBack = onBack)
+        AppTopBar(
+            title = if (state.isEditMode) "Edit Expense" else "Add Expense",
+            onBack = onBack
+        )
 
         Column(
             modifier = Modifier
@@ -102,7 +105,10 @@ fun AddExpenseScreen(
                 .padding(16.dp)
                 .height(52.dp)
         ) {
-            Text("Save expense", fontWeight = FontWeight.SemiBold)
+            Text(
+                text = if (state.isEditMode) "Save changes" else "Save expense",
+                fontWeight = FontWeight.SemiBold
+            )
         }
     }
 }
