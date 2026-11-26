@@ -27,4 +27,14 @@ Users can add purchases, choose a category, and see the total amount spent.
 - Navigation Compose
  
 - 🚧 Status
+<<<<<<< HEAD
+  In development (Week 12)
+
+## Exchange Rates (REST API)
+- Data from the public API `https://open.er-api.com/v6/latest/KZT` via Retrofit + Gson
+- Repository → ViewModel (StateFlow) → Compose UI
+- Loading, Success, Error (with Retry) and Empty states
+- Country flags are loaded with Coil
+=======
   In development (Week 14)
+>>>>>>> ac1336f3d2afb09903d57e3a585b91a61b4addc3
