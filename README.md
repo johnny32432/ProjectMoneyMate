@@ -60,6 +60,7 @@ navigation/    Routes, NavHost, BottomBar
 - Jetpack Compose (Material 3)
 - MVVM (ViewModel)
 - Navigation Compose
+<<<<<<< HEAD
 - Retrofit + Gson
 - Coil
 - Room
@@ -67,3 +68,18 @@ navigation/    Routes, NavHost, BottomBar
 
 ## 🚧 Status
 Week 13 — REST API, Room and DataStore are implemented.
+=======
+ 
+- 🚧 Status
+<<<<<<< HEAD
+  In development (Week 12)
+
+## Exchange Rates (REST API)
+- Data from the public API `https://open.er-api.com/v6/latest/KZT` via Retrofit + Gson
+- Repository → ViewModel (StateFlow) → Compose UI
+- Loading, Success, Error (with Retry) and Empty states
+- Country flags are loaded with Coil
+=======
+  In development (Week 14)
+>>>>>>> ac1336f3d2afb09903d57e3a585b91a61b4addc3
+>>>>>>> 2f650c5e3d444a4d2caf4bc769b91c18782998e5
